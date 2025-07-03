@@ -20,6 +20,8 @@ spec:
     - destination:
         host: hyperswitch-control-center
         subset: {{ .Values.hyperswitchControlCenter.version }}
+        port:
+          number: 80
       weight: 100
     timeout: 50s
   - match:
@@ -31,6 +33,8 @@ spec:
     - destination:
         host: hyperswitch-server
         subset: {{ .Values.hyperswitchServer.version }}
+        port:
+          number: 80
       weight: 100
     timeout: 50s
   - match:
@@ -40,5 +44,7 @@ spec:
     - destination:
         host: hyperswitch-server
         subset: {{ .Values.hyperswitchServer.version }}
+        port:
+          number: 80
       weight: 100
     timeout: 50s
