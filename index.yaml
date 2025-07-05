@@ -3,7 +3,7 @@ entries:
   base:
   - apiVersion: v2
     appVersion: 1.25.0
-    created: "2025-07-05T01:50:48.479503+05:30"
+    created: "2025-07-05T12:51:18.517453+05:30"
     description: Helm chart for deploying Istio cluster resources and CRDs
     digest: 07cd834a3afbccedda99c75c55e967b04a4a4353df277e132f5935069ec1d96f
     icon: https://istio.io/latest/favicons/android-192x192.png
@@ -18,7 +18,7 @@ entries:
   gateway:
   - apiVersion: v2
     appVersion: 1.25.0
-    created: "2025-07-05T01:50:48.480262+05:30"
+    created: "2025-07-05T12:51:18.517816+05:30"
     description: Helm chart for deploying Istio gateways
     digest: 8c9c929e5525fe01cda158c028f0c32c42e6957fa2f9a45b0a719c258f93438f
     icon: https://istio.io/latest/favicons/android-192x192.png
@@ -35,7 +35,32 @@ entries:
   hyperswitch-istio:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-05T01:50:48.478074+05:30"
+    created: "2025-07-05T12:51:18.516114+05:30"
+    dependencies:
+    - alias: istio-base
+      condition: istio-base.enabled
+      name: base
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.25.0
+    - condition: istiod.enabled
+      name: istiod
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.25.0
+    - alias: istio-gateway
+      condition: istio-gateway.enabled
+      name: gateway
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.25.0
+    description: A Helm chart for Kubernetes
+    digest: f07ad8795a476ebef82f0dbc9fc631bc1fc9fe57575ff51e8aaaa690873d10e6
+    name: hyperswitch-istio
+    type: application
+    urls:
+    - https://shailesh-714.github.io/istio-test/hyperswitch-istio-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-05T12:51:18.513655+05:30"
     dependencies:
     - alias: istio-base
       condition: istio-base.enabled
@@ -60,7 +85,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-05T01:50:48.475568+05:30"
+    created: "2025-07-05T12:51:18.510184+05:30"
     dependencies:
     - alias: istio-base
       condition: istio-base.enabled
@@ -85,7 +110,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-05T01:50:48.471761+05:30"
+    created: "2025-07-05T12:51:18.506358+05:30"
     description: A Helm chart for Kubernetes
     digest: e2a1509157bcebfb76fdd01ff93da196f9694cb28ec30869cc92fc1ba863aaa5
     name: hyperswitch-istio
@@ -96,7 +121,7 @@ entries:
   istiod:
   - apiVersion: v2
     appVersion: 1.25.0
-    created: "2025-07-05T01:50:48.481095+05:30"
+    created: "2025-07-05T12:51:18.518682+05:30"
     description: Helm chart for istio control plane
     digest: 1f5b43febf282990ef3f495a0f0cf512f85cd3e983f454fd4b10ac98f6b45e2f
     icon: https://istio.io/latest/favicons/android-192x192.png
@@ -110,4 +135,4 @@ entries:
     urls:
     - https://shailesh-714.github.io/istio-test/charts/istiod-1.25.0.tgz
     version: 1.25.0
-generated: "2025-07-05T01:50:48.471029+05:30"
+generated: "2025-07-05T12:51:18.50592+05:30"

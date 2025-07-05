@@ -36,6 +36,20 @@ spec:
               number: 80
       timeout: 10s
 
+    # API requests to hyperswitch-server with path rewrite
+    - match:
+        - uri:
+            prefix: /api/
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: hyperswitch-server
+            subset: {{ .Values.hyperswitchServer.version }}
+            port:
+              number: 80
+      timeout: 50s
+
     # Everything else to control center
     - match:
         - uri:
